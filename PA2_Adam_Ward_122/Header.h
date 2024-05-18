@@ -50,13 +50,14 @@ void insert(Node** list_ptr, Record* data);
 FILE* openFR(char* fileName);
 FILE* openFW(char* fileName);
 
-
 //menu
 int menu();
 
 //better strtok
 char* stok(char** p, const char* delim);
 
+//better fgets
+int getStr(char* buffer, int size);
 //load
 char* load(FILE* input);
 

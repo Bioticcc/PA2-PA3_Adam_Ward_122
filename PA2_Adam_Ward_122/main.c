@@ -39,6 +39,9 @@ int main(void) {
 			fclose(output);
 			exit(1);
 			break;
+
+		default:
+			return 0;
 		}
 	}
 	

@@ -40,10 +40,11 @@
               "RelativeDocumentMoniker": "main.c",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\main.c",
               "RelativeToolTip": "main.c",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAAAJAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-05-13T22:51:09.756Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -53,7 +54,7 @@
               "RelativeDocumentMoniker": "func.c",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\func.c",
               "RelativeToolTip": "func.c",
-              "ViewState": "AQIAADsBAAAAAAAAAAAwwFQBAAAVAAAA",
+              "ViewState": "AQIAAH4BAAAAAAAAAAAmwIkBAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-05-15T22:50:20.324Z",
               "EditorCaption": ""
@@ -66,9 +67,10 @@
               "RelativeDocumentMoniker": "Header.h",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\Header.h",
               "RelativeToolTip": "Header.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAEUAAAAVAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAADsAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-13T22:51:16.436Z"
+              "WhenOpened": "2024-05-13T22:51:16.436Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -78,9 +80,10 @@
               "RelativeDocumentMoniker": "musicPlayList.csv",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\musicPlayList.csv",
               "RelativeToolTip": "musicPlayList.csv",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-13T22:53:06.44Z"
+              "WhenOpened": "2024-05-13T22:53:06.44Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -92,7 +95,8 @@
               "RelativeToolTip": "musicPlayListCOPY.csv",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-15T22:38:51.088Z"
+              "WhenOpened": "2024-05-15T22:38:51.088Z",
+              "EditorCaption": ""
             }
           ]
         }
