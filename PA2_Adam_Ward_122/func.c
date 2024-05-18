@@ -387,7 +387,10 @@ int edit(Node* head) {
 						curr->data.rating = EditI;
 						break;
 					default:
-						printf("\nBad choice nerd\n");
+						printf("\nBad choice idiot\n");
+						for (int i = 0; i < 10000; i++) {
+							printf("[ERROR]");
+						}
 						break;
 					}
 					printf("\n|Edit more?\n|(1) Yes\n|(0) No\n|(1-0): ");
@@ -399,4 +402,29 @@ int edit(Node* head) {
 		}
 	}
 	system("pause");
+}
+
+int rate(Node* head) {
+	//clearing buffer
+	int clear;
+	int i = 1;
+	while ((clear = getchar()) != '\n' && clear != EOF);
+	Node* curr = head;
+	printf("|----Currently Rateable Songs----|\n");
+	while (curr != NULL) {
+		printf("|[%d] %s(%d:%d) - %s\n",i, curr->data.songTitle, curr->data.songLength.minutes, curr->data.songLength.seconds, curr->data.artist);
+		curr = curr->next;
+		i++;
+	}
+	char toRate[100];
+	printf("|Please enter the song name EXACTLY as it appears.\n|Song name: ");
+	getStr(toRate, 100);
+	curr = head;
+	while (curr != NULL) {
+		if (strcmp(curr->data.songTitle, toRate) == 0) {
+
+		}
+		curr = curr->next;
+	}
+
 }

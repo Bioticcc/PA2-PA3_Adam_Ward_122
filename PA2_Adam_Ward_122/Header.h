@@ -70,3 +70,6 @@ int display(Node* head);
 //edit
 int edit(Node* head);
 
+//rate
+int rate(Node* head);
+

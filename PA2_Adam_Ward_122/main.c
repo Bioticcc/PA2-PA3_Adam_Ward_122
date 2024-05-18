@@ -34,6 +34,11 @@ int main(void) {
 			system("cls");
 			edit(head);
 			break;
+		case 8:
+			//rate
+			system("cls");
+			rate(head);
+			break;
 		case 11:
 			fclose(input);
 			fclose(output);

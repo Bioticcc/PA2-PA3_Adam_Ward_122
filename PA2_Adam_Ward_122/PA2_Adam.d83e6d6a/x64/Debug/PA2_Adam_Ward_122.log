@@ -1,11 +1,3 @@
-﻿  func.c
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(7,3): warning C4047: 'return': 'FILE *' differs in levels of indirection from 'int'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(19,3): warning C4047: 'return': 'FILE *' differs in levels of indirection from 'int'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(87,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(84,6): warning C4101: 'clear': unreferenced local variable
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(119,15): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[100]'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(119,15): warning C4024: 'fgets': different types for formal and actual parameter 1
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(194,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(124,14): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'char **'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(402,1): warning C4716: 'edit': must return a value
+﻿  main.c
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\main.c(17,9): warning C4133: '=': incompatible types - from 'char *' to 'Node *'
   PA2_Adam_Ward_122.vcxproj -> C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\x64\Debug\PA2_Adam_Ward_122.exe
