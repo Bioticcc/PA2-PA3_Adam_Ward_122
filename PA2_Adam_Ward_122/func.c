@@ -228,7 +228,7 @@ int display(Node* head) {
 	
 	if (x == 1) {
 		system("cls");
-		printf("|-------PLAYLIST------|\n");
+		printf("|-------PLAYLIST------>\n");
 		int track = 1;
 		Node* curr = head;
 		while (curr != NULL) {
@@ -247,7 +247,7 @@ int display(Node* head) {
 	}
 	if (x == 2) {
 		system("cls");
-		printf("|----Currently Loaded Artists----|\n");
+		printf("|----Currently Loaded Artists---->\n");
 		Node* curr = head;
 		while (curr != NULL) {
 			printf("|%s\n", curr->data.artist);
@@ -262,7 +262,9 @@ int display(Node* head) {
 		printf("\n|Artist for lookup (PLEASE ENTER NAME EXACTLY AS SHOWN): ");
 		getStr(artist, 100);
 		printf("\n|Displaying songs by: %s\n", artist);
-	
+
+		//clearing input buffer
+		while ((clear = getchar()) != '\n' && clear != EOF);
 		curr = head;
 		while (curr != NULL) {
 			if (strcmp(curr->data.artist, artist) == 0) {
@@ -322,7 +324,7 @@ int edit(Node* head) {
 				int z = 1;
 				while (z) {
 					system("cls");
-					printf("|----Edit Attributes of Selected Song----|\n");
+					printf("|----Edit Attributes of Selected Song---->\n");
 					printf("|(1)Artist: %s\n", curr->data.artist);
 					printf("|(2)Song: %s\n", curr->data.songTitle);
 					printf("|(3)Album: %s\n", curr->data.albumTitle);
@@ -330,7 +332,7 @@ int edit(Node* head) {
 					printf("|(5)Length: %d:%d\n", curr->data.songLength.minutes, curr->data.songLength.seconds);
 					printf("|(6)Played: %d\n", curr->data.numPlayed);
 					printf("|(7)Rating: %d\n", curr->data.rating);
-					printf("\n|(1-7): ");
+					printf("|(1-7): ");
 					int toEdit;
 					char Edit[100];
 					int EditI;
@@ -422,7 +424,22 @@ int rate(Node* head) {
 	curr = head;
 	while (curr != NULL) {
 		if (strcmp(curr->data.songTitle, toRate) == 0) {
-
+			printf("|%s (%d:%d) - %s | RATING: %d\n", curr->data.songTitle, curr->data.songLength.minutes, curr->data.songLength.seconds, curr->data.artist, curr->data.rating);
+			printf("|New rating from 1 to 5: ");
+			int rating;
+			scanf("%d", &rating);
+			if (rating <= 5 && rating >= 1) {
+				curr->data.rating = rating;
+				system("pause");
+				break;
+			}
+			else {
+				printf("|Please enter a number between 1 and 5: ");
+				scanf("%d", &rating);
+				curr->data.rating = rating;
+				system("pause");
+				break;
+			}
 		}
 		curr = curr->next;
 	}
