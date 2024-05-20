@@ -1,5 +1,19 @@
 #include "Header.h"
 //opening file
+
+
+int ErrorPanic(){
+	for (int i = 0; i < 1000; i++) {
+		printf("<[ERROR]>");
+		Sleep(200);
+	}
+	return 1;
+	printf("\n\nJUST KIDDING! :D\n\n");
+	system("pause");
+}
+
+
+
 FILE* openFR(char* fileName) {
 	FILE* input = fopen(fileName, "r");
 	if (input == NULL) {
@@ -219,6 +233,7 @@ int store(FILE* output, Node* head) {
 }
 
 int display(Node* head) {
+	int clear;
 	int x = 0;
 	printf("|--------DISPLAY-------->\n");
 	printf("|(1) view all tracks\n");
@@ -253,18 +268,18 @@ int display(Node* head) {
 			printf("|%s\n", curr->data.artist);
 			curr = curr->next;
 		}
-
+		
 		//clearing input buffer
 		int clear;
 		while ((clear = getchar()) != '\n' && clear != EOF);
-
+		
 		char artist[100];
 		printf("\n|Artist for lookup (PLEASE ENTER NAME EXACTLY AS SHOWN): ");
 		getStr(artist, 100);
 		printf("\n|Displaying songs by: %s\n", artist);
-
+		/*
 		//clearing input buffer
-		while ((clear = getchar()) != '\n' && clear != EOF);
+		while ((clear = getchar()) != '\n' && clear != EOF);*/
 		curr = head;
 		while (curr != NULL) {
 			if (strcmp(curr->data.artist, artist) == 0) {
@@ -403,6 +418,105 @@ int edit(Node* head) {
 			curr = curr->next;
 		}
 	}
+	else {
+		char song[100];
+		printf("\n|----Songs By: %s----|\n", artist);
+		curr = head;
+		while (curr != NULL) {
+			if (strcmp(curr->data.artist, artist) == 0) {
+				printf("|Album: %s, Song: %s\n", curr->data.albumTitle, curr->data.songTitle);
+				strcpy(song, curr->data.songTitle);
+			}
+			curr = curr->next;
+		}
+		curr = head;
+		while (curr != NULL) {
+			if (strcmp(curr->data.songTitle, song) == 0) {
+				int z = 1;
+				while (z) {
+					system("cls");
+					printf("|----Edit Attributes of Selected Song---->\n");
+					printf("|(1)Artist: %s\n", curr->data.artist);
+					printf("|(2)Song: %s\n", curr->data.songTitle);
+					printf("|(3)Album: %s\n", curr->data.albumTitle);
+					printf("|(4)Genre: %s\n", curr->data.genre);
+					printf("|(5)Length: %d:%d\n", curr->data.songLength.minutes, curr->data.songLength.seconds);
+					printf("|(6)Played: %d\n", curr->data.numPlayed);
+					printf("|(7)Rating: %d\n", curr->data.rating);
+					printf("|(1-7): ");
+					int toEdit;
+					char Edit[100];
+					int EditI;
+					scanf("%d", &toEdit);
+					int clear;
+					while ((clear = getchar()) != '\n' && clear != EOF);
+					switch (toEdit)
+					{
+					case 1:
+						printf("|--Now editing:[Artist]-->\n");
+						printf("|(str): ");
+						getStr(Edit, 100);
+						strcpy(curr->data.artist, Edit);
+						break;
+					case 2:
+						printf("|--Now editing:[Song]-->\n");
+						printf("|(str): ");
+						getStr(Edit, 100);
+						strcpy(curr->data.songTitle, Edit);
+
+						break;
+					case 3:
+						printf("|--Now editing:[Album]-->\n");
+						printf("|(str): ");
+						getStr(Edit, 100);
+						strcpy(curr->data.albumTitle, Edit);
+						break;
+					case 4:
+						printf("|--Now editing:[Genre]-->\n");
+						printf("|(str): ");
+						getStr(Edit, 100);
+						strcpy(curr->data.genre, Edit);
+						break;
+					case 5:
+						printf("|--Now editing:[Length]--\n");
+						printf("|(int) Min: ");
+						scanf("%d", &EditI);
+						curr->data.songLength.minutes = EditI;
+						printf("|(int) Sec: ");
+						scanf("%d", &EditI);
+						curr->data.songLength.seconds = EditI;
+						break;
+					case 6:
+						printf("|--Now editing:[Played]-->\n");
+						printf("|(int): ");
+						scanf("%d", &EditI);
+						curr->data.numPlayed = EditI;
+
+						break;
+					case 7:
+						printf("|--Now editing:[Rating]-->\n");
+						printf("|(int): ");
+						scanf("%d", &EditI);
+						curr->data.rating = EditI;
+						break;
+					default:
+						printf("\nBad choice idiot\n");
+						for (int i = 0; i < 10000; i++) {
+							printf("[ERROR]");
+						}
+						break;
+					}
+					printf("\n|Edit more?\n|(1) Yes\n|(0) No\n|(1-0): ");
+					scanf("%d", &z);
+				}
+				//now the switch case D:
+			}
+			curr = curr->next;
+		}
+
+	}
+
+
 	system("pause");
 }
 
@@ -441,6 +555,29 @@ int rate(Node* head) {
 				break;
 			}
 		}
+		curr = curr->next;
+	}
+
+}
+
+int play(Node* head) {
+	system("cls");
+	printf("|----PLAYING---->\n");
+	Node* curr = head;
+	while (curr != NULL) {
+		printf("|%s\n", curr->data.artist);
+		printf("|%s\n", curr->data.albumTitle);
+		printf("|%s\n", curr->data.songTitle);
+		printf("|%s\n", curr->data.genre);
+		printf("|%d:", curr->data.songLength.minutes);
+		printf("%d\n", curr->data.songLength.seconds);
+		printf("|%d\n", curr->data.numPlayed);
+		printf("|%d\n", curr->data.rating);
+		printf("|--------------->\n\n");
+
+		printf("\\(*O*)/\n\n");
+
+		Sleep(3000);
 		curr = curr->next;
 	}
 

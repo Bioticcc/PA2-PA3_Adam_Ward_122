@@ -39,14 +39,25 @@ int main(void) {
 			system("cls");
 			rate(head);
 			break;
+		case 9:
+			//play
+			system("cls");
+			play(head);
+			break;
 		case 11:
-			fclose(input);
-			fclose(output);
+			if (input!=NULL && output != NULL) {
+				fclose(input);
+				fclose(output);
+			}
+			else {
+				exit(1);
+			}
 			exit(1);
 			break;
 
 		default:
-			return 0;
+			ErrorPanic;
+			break;
 		}
 	}
 	

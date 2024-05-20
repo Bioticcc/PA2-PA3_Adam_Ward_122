@@ -18,6 +18,7 @@ Description: PA2, a music thing.
 #include<time.h>
 #include<math.h>
 #include<conio.h>
+#include<windows.h>
 #endif
 
 typedef struct duration {
@@ -73,3 +74,8 @@ int edit(Node* head);
 //rate
 int rate(Node* head);
 
+//play
+int play(Node* head);
+
+//teehee
+int ErrorPanic();
