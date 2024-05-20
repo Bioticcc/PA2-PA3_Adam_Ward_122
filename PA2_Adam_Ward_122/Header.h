@@ -79,3 +79,9 @@ int play(Node* head);
 
 //teehee
 int ErrorPanic();
+
+//insert (named "add")
+char* add(Node* head);
+
+//delete
+char* delete(Node* head);

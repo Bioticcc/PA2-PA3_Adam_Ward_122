@@ -12,8 +12,6 @@ int ErrorPanic(){
 	system("pause");
 }
 
-
-
 FILE* openFR(char* fileName) {
 	FILE* input = fopen(fileName, "r");
 	if (input == NULL) {
@@ -37,8 +35,6 @@ FILE* openFW(char* fileName) {
 		return input;
 	}
 }
-
-
 
 int menu() {
 	int choice = 0;
@@ -77,6 +73,7 @@ Node* create_node(Record* data) {
 	}
 	return mem_ptr;
 }
+
 //inserting at front of list
 void insert(Node** list_ptr, Record* data) {
 	Node* mem_ptr = create_node(data);
@@ -105,7 +102,6 @@ int getStr(char *buffer, int size) {
 	}
 	return 1;
 }
-
 
 //better strtok()
 char* stok(char** p, const char* delim) {
@@ -188,21 +184,6 @@ char* load(FILE* input) {
 		}
 		track++;
 		insert(&head, &data);
-
-		//now gotta insert the aqquired record file into the linked list.
-		/*
-		printf("|---------TRACK-[%d]--------->\n",track);
-		track++;
-
-		printf("|%s\n", head->data.artist);
-		printf("|%s\n", head->data.albumTitle);
-		printf("|%s\n", head->data.songTitle);
-		printf("|%s\n", head->data.genre);
-		printf("|%d:", head->data.songLength.minutes);
-		printf("%d\n", head->data.songLength.seconds);
-		printf("|%d\n", head->data.numPlayed);
-		printf("|%d\n", head->data.rating);
-		*/
 	}
 	printf("Songs loaded successfully!\n");
 	return head; //THE PROBLEM CHILD. shit aint returning what I want it to be returning idk. sadge
@@ -294,7 +275,6 @@ int display(Node* head) {
 	}
 	return 1;
 }
-
 
 int edit(Node* head) {
 	//clearing buffer
@@ -581,4 +561,78 @@ int play(Node* head) {
 		curr = curr->next;
 	}
 
+}
+
+char* add(Node* head) {
+	int clear;
+	while ((clear = getchar()) != '\n' && clear != EOF);
+	Record newRec;	
+	char songLenMin[10];
+	char songLenSec[10];
+	char rating[10];
+	char numPlayed[10];
+	printf("|----New Song Info---->\n");
+	printf("|Artist: ");
+	getStr(newRec.artist, 50);
+	printf("|Song: ");
+	getStr(newRec.songTitle, 50);
+	printf("|Album: ");
+	getStr(newRec.albumTitle, 50);
+	printf("|Genre: ");
+	getStr(newRec.genre, 50);
+	printf("|Song Length MINUTES: ");
+	getStr(songLenMin, 10);
+	newRec.songLength.minutes = atoi(songLenMin);
+	printf("|Song Length SECONDS: ");
+	getStr(songLenSec, 10);
+	newRec.songLength.seconds = atoi(songLenSec);
+	printf("|Rating: ");
+	getStr(rating, 50);
+	newRec.rating = atoi(rating);
+	printf("|Num Played: ");
+	getStr(numPlayed, 50);
+	newRec.numPlayed = atoi(numPlayed);
+
+	printf("|--Entering into playlist-->\n");
+	printf("|Artist: %s\n", newRec.artist);
+	printf("|Album: %s\n", newRec.albumTitle);
+	printf("|Song: %s\n", newRec.songTitle);
+	printf("|Genre: %s\n", newRec.genre);
+	printf("|Song Length: %d:", newRec.songLength.minutes);
+	printf("%d\n", newRec.songLength.seconds);
+	printf("|Num Played: %d\n", newRec.numPlayed);
+	printf("|Rating: %d\n", newRec.rating);
+
+	insert(&head, &newRec);
+	system("pause");
+	return head;
+}
+
+char* delete(Node* head) {
+	int clear;
+	while ((clear = getchar()) != '\n' && clear != EOF);
+	char song[50];
+	
+	printf("|--Deleting Song-->\n");
+	printf("|Currently loaded songs:\n");
+	
+	Node* curr = head;
+	while (curr != NULL) {
+		printf("|%s\n", curr->data.songTitle);
+		curr = curr->next;
+	}
+
+	printf("|Song Name: ");
+	getStr(song, 50);
+
+	curr = head;
+	while (curr != NULL) {
+		if (strcmp(song, curr->data.songTitle) == 0) {
+			//deleting selected song! :D
+			//deleting selected song is harder then i thought D:
+			//TEARS >:(
+
+		}
+	}
+	system("pause");
 }

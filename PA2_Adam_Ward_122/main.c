@@ -29,6 +29,16 @@ int main(void) {
 			system("cls");
 			display(head);
 			break;
+		case 4:
+			//insert
+			system("cls");
+			head = add(head);
+			break;
+		case 5:
+			//delete
+			system("cls");
+			delete(head);
+			break;
 		case 6:
 			//edit
 			system("cls");
