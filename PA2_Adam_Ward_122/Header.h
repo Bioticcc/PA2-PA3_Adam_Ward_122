@@ -85,3 +85,6 @@ char* add(Node* head);
 
 //delete
 char* delete(Node* head);
+
+//sort
+char* sort(Node* head);

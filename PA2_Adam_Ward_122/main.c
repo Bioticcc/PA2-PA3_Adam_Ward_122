@@ -37,12 +37,17 @@ int main(void) {
 		case 5:
 			//delete
 			system("cls");
-			delete(head);
+			head = delete(head);
 			break;
 		case 6:
 			//edit
 			system("cls");
 			edit(head);
+			break;
+		case 7:
+			//sort
+			system("cls");
+			sort(head);
 			break;
 		case 8:
 			//rate
@@ -58,11 +63,11 @@ int main(void) {
 			if (input!=NULL && output != NULL) {
 				fclose(input);
 				fclose(output);
-			}
-			else {
 				exit(1);
 			}
-			exit(1);
+			else {
+				exit(0);
+			}
 			break;
 
 		default:

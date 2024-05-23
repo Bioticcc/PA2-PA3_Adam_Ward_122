@@ -143,6 +143,10 @@ char* load(FILE* input) {
 					//printf("%s", tokS);
 					strcat(data.artist, ",");
 					strcat(data.artist, tokS);
+					//getting rid of them damned quotations
+					int length = strlen(data.artist);
+					memmove(data.artist, data.artist + 1, length);
+					data.artist[strlen(data.artist) - 1] = '\0';
 					//printf("%s\n", data.artist);
 
 				}
@@ -611,7 +615,7 @@ char* add(Node* head) {
 char* delete(Node* head) {
 	int clear;
 	while ((clear = getchar()) != '\n' && clear != EOF);
-	char song[50];
+	char song[100];
 	
 	printf("|--Deleting Song-->\n");
 	printf("|Currently loaded songs:\n");
@@ -623,16 +627,113 @@ char* delete(Node* head) {
 	}
 
 	printf("|Song Name: ");
-	getStr(song, 50);
+	getStr(song, 100);
+	printf("Chosen Song: %s\n", song);
 
 	curr = head;
 	while (curr != NULL) {
-		if (strcmp(song, curr->data.songTitle) == 0) {
-			//deleting selected song! :D
-			//deleting selected song is harder then i thought D:
-			//TEARS >:(
+		if (strcmp(curr->data.songTitle, song) == 0) {
+			printf("\n|Deleting song...\n");
 
+			//checking if curr is either the FIRST or LAST node in the list
+			if (curr->prev == NULL) {
+				//means its the first in list
+				printf("\nDeleting FIRST song\n");
+				curr->next->prev = NULL;
+				head = curr->next;
+				system("pause");
+			}
+			else if(curr->next == NULL){
+				//means its the last in the list
+				curr->prev->next = NULL;
+				printf("\nDeleting LAST song\n");
+				system("pause");
+
+			}
+			else {
+				curr->prev->next = curr->next;
+				curr->next->prev = curr->prev;
+				printf("\nDeleting MIDDLE song\n");
+				system("pause");
+
+			}
+			free(curr);
+			return head;
 		}
+
+		curr = curr->next;
+	}
+}
+
+char* sort(Node* head) {
+	printf("|--Sorting Playlist-->\n");
+	printf("|(1)Sort by ARTIST (A-Z)\n");
+	printf("|(2)Sort by ALBUM (A-Z)\n");
+	printf("|(3)Sort by RATING (1-5)\n");
+	printf("|(4)Sort by NUM PLAYED (large - small)\n");
+	printf("|Enter (1-4): ");
+	int a = 0;
+	scanf("%d", &a);
+
+	Node* currI = head;
+	Node* tempP;
+	Node* tempN;
+	switch(a){
+
+	case 1:
+		while (currI != NULL) {
+			//checking if it SHOULD be swapped
+			Node* swap = currI;
+			Node* currJ = currI->next;
+			while (currJ != NULL) {
+				if (strcmp(currJ->data.artist, swap->data.artist) < 0) {
+					swap = currJ;
+				}
+				currJ = currJ->next;
+			}
+			if (swap != currI) {
+				//dealing with line cases! (i think they are called that idk)!
+				if (currI->prev != NULL) { //making sure its not the first in the list
+					currI->prev->next = swap;
+				}
+				else { //updating head pointer if it IS the first in the list
+					head = swap;
+				}
+
+				if (swap->prev != NULL) {
+					swap->prev->next = currI;
+				}
+				if (currI->next != NULL) {
+					currI->next->prev = swap;
+				}
+				if (swap->next != NULL) {
+					swap->next->prev = currI;
+				}
+
+				//now that weve dealt with linecases (or edge cases not sure), lets actually swap that john!
+				//swappin me prev pointers
+				tempP = currI->prev;
+				currI->prev = swap->prev;
+				swap->prev = tempP;
+				//swappin me next pointers
+				tempN = currI->next;
+				currI->next = swap->next;
+				swap->next = tempN;
+
+				//updating currI
+			}
+			currI = currI->next;
+		}
+		return head;
+	case 2:
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	default:
+		printf("choose a number (1-4)...\n");
 	}
 	system("pause");
+
 }
