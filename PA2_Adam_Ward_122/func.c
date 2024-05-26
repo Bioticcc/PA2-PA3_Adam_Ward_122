@@ -674,57 +674,116 @@ char* sort(Node* head) {
 	printf("|Enter (1-4): ");
 	int a = 0;
 	scanf("%d", &a);
+	
 
-	Node* currI = head;
+	Node* iteratorI = head;
+	Node* iteratorJ;
+	Node* I;
+	Node* J;
 	Node* tempP;
 	Node* tempN;
+	Node* tempPN;
+	Node* tempNP;
+	Node* min;
 	switch(a){
 
 	case 1:
-		while (currI != NULL) {
-			//checking if it SHOULD be swapped
-			Node* swap = currI;
-			Node* currJ = currI->next;
-			while (currJ != NULL) {
-				if (strcmp(currJ->data.artist, swap->data.artist) < 0) {
-					swap = currJ;
+		while (iteratorI != NULL) {
+			printf("\ntest\n");
+			iteratorJ = iteratorI;
+			min = iteratorI;
+			//determining if we need to swap.
+			while (iteratorJ != NULL) {
+				//means the current J value is LESS then the current I value
+				if (strcmp(iteratorI->data.artist, iteratorJ->data.artist) < 0) {
+					min = iteratorJ;
 				}
-				currJ = currJ->next;
+				iteratorJ = iteratorJ->next;
 			}
-			if (swap != currI) {
-				//dealing with line cases! (i think they are called that idk)!
-				if (currI->prev != NULL) { //making sure its not the first in the list
-					currI->prev->next = swap;
-				}
-				else { //updating head pointer if it IS the first in the list
-					head = swap;
-				}
-
-				if (swap->prev != NULL) {
-					swap->prev->next = currI;
-				}
-				if (currI->next != NULL) {
-					currI->next->prev = swap;
-				}
-				if (swap->next != NULL) {
-					swap->next->prev = currI;
-				}
-
-				//now that weve dealt with linecases (or edge cases not sure), lets actually swap that john!
-				//swappin me prev pointers
-				tempP = currI->prev;
-				currI->prev = swap->prev;
-				swap->prev = tempP;
-				//swappin me next pointers
-				tempN = currI->next;
-				currI->next = swap->next;
-				swap->next = tempN;
-
-				//updating currI
+			if (strcmp(min, iteratorI) == 0) {
+				//means min was never updated, therefore there was nothing in the unsorted section of the doubly linked list smaller then it, 
+				//meaning no need to swap.
+				continue;
 			}
-			currI = currI->next;
+
+			else {
+				//now I need to make sure iteratorI stays consistent, so I guess set it tooooooo uh I? i think
+				iteratorI = iteratorI->next;
+				I = iteratorI;
+				J = min;
+				//means we DO need to swap! yahooie! (i want to cry TEARS, TEARS i tell you ;-;)
+				//alrighty so heres the game plan, i gotta swap NINE fucking pointers for each one apparantly soooooo
+				//min = J, swap this with I, (I = iteratorI) name change for implicities sake!)
+
+				//swapping when swap/iteratorI is the FIRST item in the list, means i need to update head value as well.
+				if (I->prev == NULL) {
+					//swapping!
+					//so sinnce I->prev is NULL, that means i dont need to do the wacky shit? hopefully??
+					//nope gotta do the wacky shit, heres the horrible pointers
+					tempNP = I->next->prev;
+					I->next->prev = J->next->prev;
+					J->next->prev = tempNP;
+					//thats the NPs, now PN
+					I->prev->next = J->prev->next;
+					J->next->prev = NULL;
+
+					//now the usual ones?
+					tempN = I->next;
+					I->next = J->next;
+					I->prev = J->prev;
+					J->next = tempN;
+					J->prev = NULL;
+
+					//since its swapping the head pointer, head needs to be updated and returned AFTER my while loop (i think???)
+					head = J;
+
+				}
+				else if (J->next = NULL) {
+					//swapping!
+					tempPN = I->prev->next;
+					I->prev->next = J->prev->next;
+					J->prev->next = tempPN;
+					//now the NPs
+					J->next->prev = I->next->prev;
+					I->next->prev = NULL;
+
+					//the usuals! :D (im reaching the end of my rope)
+					tempP = I->prev;
+					I->prev = J->prev;
+					J->prev = tempP;
+					J->next = I->next;
+					I->next = NULL;
+				}
+				else if (I->prev == NULL && J->next == NULL) {
+					//swapping tail and head at the same time (.____.)
+
+
+
+				}
+
+				else {
+					//swapping!
+					tempPN = I->prev->next;
+					tempNP = I->next->prev;
+					I->prev->next = J->prev->next;
+					I->next->prev = J->next->prev;
+					J->prev->next = tempPN;
+					J->next->prev = tempNP;
+
+					//THE USUALS! one last time!
+					tempP = I->prev;
+					tempN = I->next;
+					I->prev = J->prev;
+					I->next = J->next;
+					J->prev = tempP;
+					J->next = tempN;
+				}
+				printf("\nSWAPPED!\n");
+			}
+			
 		}
 		return head;
+		break;
 	case 2:
 		break;
 	case 3:

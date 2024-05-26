@@ -47,7 +47,7 @@ int main(void) {
 		case 7:
 			//sort
 			system("cls");
-			sort(head);
+			head = sort(head);
 			break;
 		case 8:
 			//rate
