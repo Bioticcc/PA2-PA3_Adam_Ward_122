@@ -1,5 +1,7 @@
 #include "Header.h"
 
+//ADDING THE TESTS IS SOMETHING I CAN DO ON THE PLANE. JUST A REMINDER TO FUTURE ME. DO THOSE FUCKIN THINGS JUST ON THE PLANE TO POLAND!!!! idiota
+
 int main(void) {
 	//declarations
 	Record* data = NULL; 
@@ -8,7 +10,7 @@ int main(void) {
 	FILE* output = NULL;
 	while (1) {	
 		system("cls");
-		printf("head: %s\n", head);
+		//printf("head: %s\n", head);
 
 		int c = menu();
 		switch (c) {
@@ -62,7 +64,16 @@ int main(void) {
 			system("cls");
 			play(head);
 			break;
+		case 10:
+			//shuffle
+			system("cls");
+			shuffle(head);
+			break;
 		case 11:
+			//run tests (PLEASE ONLY DO THIS AFTER USING OPTIONS 1 AND 2 PLEASE THEY ARE REQUIRED.
+			insertTest();
+
+		case 12:
 			if (input!=NULL && output != NULL) {
 				fclose(input);
 				fclose(output);

@@ -89,3 +89,22 @@ char* delete(Node* head);
 //sort
 int compare(Node* cmp1, Node* cmp2, int cmp);
 char* sort(Node* head);
+
+//shuffle
+
+//okay this gon be weird but trust i think im cooking here
+typedef struct shuff {
+	int orderInShuff;
+}Shuff;
+
+typedef struct nodeShuff {
+	Shuff data;
+	struct node* next;
+	struct node* prev;
+}NodeShuff;
+
+NodeShuff* create_shuff_node(Shuff* data);
+void insertShuff(NodeShuff** list_ptr, Shuff* data);
+
+int shuffle(Node* head);
+

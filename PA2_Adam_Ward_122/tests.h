@@ -1,6 +1,9 @@
 #pragma once
 #include "header.h"
 
-void insertTest();
+void insertTest() {
+
+
+}
 
 

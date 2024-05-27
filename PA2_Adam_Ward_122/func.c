@@ -74,6 +74,17 @@ Node* create_node(Record* data) {
 	return mem_ptr;
 }
 
+NodeShuff* create_shuff_node(Shuff* data) {
+	NodeShuff* mem_ptr = malloc(sizeof(NodeShuff));
+
+	if (mem_ptr != NULL) {
+		mem_ptr->next = NULL;
+		mem_ptr->prev = NULL;
+		mem_ptr->data = *data;
+	}
+	return mem_ptr;
+}
+
 //inserting at front of list
 void insert(Node** list_ptr, Record* data) {
 	Node* mem_ptr = create_node(data);
@@ -84,6 +95,18 @@ void insert(Node** list_ptr, Record* data) {
 	}
 	else {
 		//not empty
+		mem_ptr->next = *list_ptr;
+		(*list_ptr)->prev = mem_ptr;
+		*list_ptr = mem_ptr;
+	}
+}
+
+void insertShuff(NodeShuff** list_ptr, Shuff* data){
+	NodeShuff* mem_ptr = create_shuff_node(data);
+	if (*list_ptr == NULL) {
+		*list_ptr = mem_ptr;
+	}
+	else {
 		mem_ptr->next = *list_ptr;
 		(*list_ptr)->prev = mem_ptr;
 		*list_ptr = mem_ptr;
@@ -688,112 +711,122 @@ char* sort(Node* head) {
 	int a = 0;
 	scanf("%d", &a);
 	
-
 	Node* i = head;
 	Node* j;
-	Node* temp_i_prev;
-	Node* temp_i_next;
 	Node* min;
-
+	Record temp = i->data;
 
 	while (i != NULL) {
-		system("cls");
-		
-		Node* printing = head;
-		printf("sorted list:\n\n");
-		while (printing != NULL) {
-			printf("Artist: %s | Rating: %d | Album: %s\n\n", printing->data.artist, printing->data.rating, printing->data.albumTitle);
-			printing = printing->next;
-		}
-		
-		//printf("\ntest\n");
-		j = i;
+		j = i->next;
 		min = i;
-		//determining if we need to swap.
 		while (j != NULL) {
-			//means the current J value is LESS then the current I value
-			if (compare(j, min, a) < 0) {
-				//printf("testMIN\n");
+			if (compare(min, j, a) > 0) {
 				min = j;
 			}
-			//printf("test: %s\n", j);
-			j = j->next;
+			j = j->next;	
 		}
 
-		//printf("\ncomparing: %d | %d\n", min->data.rating, i->data.rating);
-		//printf("\ncomparing: %d\n", min==i);
-		/*
-		//logan tests
-		if (i->next == min || min->next == i) {
-			printf("\ni next = min or min next = i\n");
-			system("pause");
+		if (min!=i) {
+			//swap em!
+			//setting temp = i
+			strcpy(temp.artist, i->data.artist);
+			strcpy(temp.albumTitle, i->data.albumTitle);
+			strcpy(temp.songTitle, i->data.songTitle);
+			strcpy(temp.genre, i->data.genre);
+			temp.rating = i->data.rating;
+			temp.numPlayed = i->data.numPlayed;
+			temp.songLength.minutes = i->data.songLength.minutes;
+			temp.songLength.seconds = i->data.songLength.seconds;
+
+			//setting i = min
+			strcpy(i->data.artist, min->data.artist);
+			strcpy(i->data.albumTitle, min->data.albumTitle);
+			strcpy(i->data.songTitle, min->data.songTitle);
+			strcpy(i->data.genre, min->data.genre);
+			i->data.rating = min->data.rating;
+			i->data.numPlayed = min->data.numPlayed;
+			i->data.songLength.minutes = min->data.songLength.minutes;
+			i->data.songLength.seconds = min->data.songLength.seconds;
+
+			//setting min to temp;
+			strcpy(min->data.artist, temp.artist);
+			strcpy(min->data.albumTitle, temp.albumTitle);
+			strcpy(min->data.songTitle, temp.songTitle);
+			strcpy(min->data.genre, temp.genre);
+			min->data.rating = temp.rating;
+			min->data.numPlayed = temp.numPlayed;
+			min->data.songLength.minutes = temp.songLength.minutes;
+			min->data.songLength.seconds = temp.songLength.seconds;
 		}
-		if (i->next == min->prev || min->next == i->prev) {
-			printf("\ni next = min prev\n");
-			system("pause");
-		}
-		if (min->next == NULL) {
-			printf("\nmin null\n");
-			system("pause");
-		}*/
-
-
-
-
-		if ((compare(i, min, a) == 0) || i==min) {
-			printf("same!\n");
-			//means min was never updated, therefore there was nothing in the unsorted section of the doubly linked list smaller then it, 
-			//meaning no need to swap.
-			i = i->next;
-			//continue;
-		}
-	
-		else {
-			// swap nodes i and j
-			j = min;
-
-			if (i->prev != NULL)
-				i->prev->next = j;
-			else {
-				head = j;
-			}
-			if (j->prev != NULL)
-				j->prev->next = i;
-			else {
-				head = i;
-			}
-			if (i->next != NULL)
-				i->next->prev = j;
-
-			if (j->next != NULL)
-				j->next->prev = i;
-
-			if (i->next == j) {
-				i->next = j->next;
-				j->prev = i->prev;
-				i->prev = j;
-				j->next = i;
-			}
-			else if (j->next == i) {
-				i->prev = j->prev;
-				j->next = i->next;
-				i->next = j;
-				j->prev = i;
-			}
-			else {
-				temp_i_next = i->next;
-				temp_i_prev = i->prev;
-
-				i->next = j->next;
-				i->prev = j->prev;
-
-				j->next = temp_i_next;
-				j->prev = temp_i_prev;
-			}
-			i = j->next; 
-		}
-		system("pause");
+		i = i->next;
 	}
 	return head;
+
 }
 
+int shuffle(Node* head) {
+	//finding length of doubly linked list
+	NodeShuff* headShuff = NULL;
+	Shuff data;
+	int len = 0;
+	Node* curr = head;
+	while (curr != NULL) {
+		len++;
+		curr = curr->next;
+	}
+	printf("length of playlist: %d\n", len);
+	int shuffLen = 0;
+
+	//generating order
+	srand(time(0));
+	while (shuffLen < len) {
+		int i = (data.orderInShuff = rand() % len + 1);
+		//printf("\ntesting i: %d\n", i);
+		//checking if current order.orderInShuff is already IN the shuffle order list
+		NodeShuff* curr = headShuff;
+		int ch = 1;
+		while (curr != NULL) { //all this is doing is checking if its in the list
+			if (curr->data.orderInShuff == i) {
+				//printf("current i found in list. getting new one!\n");
+				ch = 0;
+			}
+			curr = curr->next;
+		}
+		if (ch) {
+			//printf("inserting node!: %d\n", data.orderInShuff);
+			insertShuff(&headShuff, &data);
+			shuffLen++;
+		}
+	}
+
+
+	//printing out new shuffle order now that we have generated a full new linked list of all the new orders! :D
+	NodeShuff* currShuff = headShuff;
+	printf("order of songs: ");
+	while (currShuff != NULL) {
+		printf("%d,", currShuff->data.orderInShuff);
+		currShuff = currShuff->next;
+	}
+	system("pause");
+
+
+	//Now that we have the song order, lets play then in a shuffled manner!
+	//how the fuck do i do that though ;-; TEARS AGH
+	currShuff = headShuff;
+	int i;
+	printf("shuffled songs:\n");
+	while (currShuff != NULL) {
+		//iterate through the SHUFF list, then iterate through the RECORD list and find the corresponding song to that order.
+		int songNUM = currShuff->data.orderInShuff;
+		curr = head;
+		i = 1;
+		while (i != songNUM) {
+			curr = curr->next;
+			i++;
+		}
+		//now that we have reached the corresponding part of the RECORDS list, we print it out!
+		printf("[%d] %s\n", i, curr->data.songTitle);
+		currShuff = currShuff->next;
+	}
+	system("pause");
+}
