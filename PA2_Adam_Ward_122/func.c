@@ -716,12 +716,29 @@ char* sort(Node* head) {
 				//printf("testMIN\n");
 				min = j;
 			}
-			printf("test: %s\n", j);
+			//printf("test: %s\n", j);
 			j = j->next;
 		}
 
 		//printf("\ncomparing: %d | %d\n", min->data.rating, i->data.rating);
 		//printf("\ncomparing: %d\n", min==i);
+		/*
+		//logan tests
+		if (i->next == min || min->next == i) {
+			printf("\ni next = min or min next = i\n");
+			system("pause");
+		}
+		if (i->next == min->prev || min->next == i->prev) {
+			printf("\ni next = min prev\n");
+			system("pause");
+		}
+		if (min->next == NULL) {
+			printf("\nmin null\n");
+			system("pause");
+		}*/
+
+
+
 
 		if ((compare(i, min, a) == 0) || i==min) {
 			printf("same!\n");
@@ -737,14 +754,14 @@ char* sort(Node* head) {
 
 			if (i->prev != NULL)
 				i->prev->next = j;
-			else
+			else {
 				head = j;
-
+			}
 			if (j->prev != NULL)
 				j->prev->next = i;
-			else
+			else {
 				head = i;
-
+			}
 			if (i->next != NULL)
 				i->next->prev = j;
 
@@ -773,8 +790,7 @@ char* sort(Node* head) {
 				j->next = temp_i_next;
 				j->prev = temp_i_prev;
 			}
-
-			i = min->next; 
+			i = j->next; 
 		}
 		system("pause");
 	}
