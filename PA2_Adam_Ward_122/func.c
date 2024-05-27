@@ -665,7 +665,7 @@ char* delete(Node* head) {
 	}
 }
 
-char* compare(Node* cmp1, Node* cmp2, int cmp) {
+int compare(Node* cmp1, Node* cmp2, int cmp) {
 	switch (cmp) {
 	case 1:
 		return strcmp(cmp1->data.artist, cmp2->data.artist);
@@ -689,97 +689,95 @@ char* sort(Node* head) {
 	scanf("%d", &a);
 	
 
-	
 	Node* i = head;
 	Node* j;
-	Node* tempP;
-	Node* tempN;
+	Node* temp_i_prev;
+	Node* temp_i_next;
 	Node* min;
 
-	switch(a){
 
-	case 1:
-		while (i != NULL) {
-			system("cls");
-
-			Node* printing = head;
-			printf("sorted list:\n\n");
-			while (printing != NULL) {
-				printf("Artist: %s\n", printing->data.artist);
-				printing = printing->next;
+	while (i != NULL) {
+		system("cls");
+		
+		Node* printing = head;
+		printf("sorted list:\n\n");
+		while (printing != NULL) {
+			printf("Artist: %s | Rating: %d | Album: %s\n\n", printing->data.artist, printing->data.rating, printing->data.albumTitle);
+			printing = printing->next;
+		}
+		
+		//printf("\ntest\n");
+		j = i;
+		min = i;
+		//determining if we need to swap.
+		while (j != NULL) {
+			//means the current J value is LESS then the current I value
+			if (compare(j, min, a) < 0) {
+				//printf("testMIN\n");
+				min = j;
 			}
+			printf("test: %s\n", j);
+			j = j->next;
+		}
 
-			//printf("\ntest\n");
-			j = i;
-			min = i;
-			//determining if we need to swap.
-			while (j != NULL) {
-				//means the current J value is LESS then the current I value
-				if (strcmp(j->data.artist, min->data.artist) < 0) {
-					//printf("testMIN\n");
-					min = j;
-				}
-				j = j->next;
+		//printf("\ncomparing: %d | %d\n", min->data.rating, i->data.rating);
+		//printf("\ncomparing: %d\n", min==i);
+
+		if ((compare(i, min, a) == 0) || i==min) {
+			printf("same!\n");
+			//means min was never updated, therefore there was nothing in the unsorted section of the doubly linked list smaller then it, 
+			//meaning no need to swap.
+			i = i->next;
+			//continue;
+		}
+	
+		else {
+			// swap nodes i and j
+			j = min;
+
+			if (i->prev != NULL)
+				i->prev->next = j;
+			else
+				head = j;
+
+			if (j->prev != NULL)
+				j->prev->next = i;
+			else
+				head = i;
+
+			if (i->next != NULL)
+				i->next->prev = j;
+
+			if (j->next != NULL)
+				j->next->prev = i;
+
+			if (i->next == j) {
+				i->next = j->next;
+				j->prev = i->prev;
+				i->prev = j;
+				j->next = i;
 			}
-
-			printf("\nmin: %s, swap: %s\n", min, i);
-			system("pause");
-
-			if (strcmp(min->data.artist, i->data.artist) == 0) {
-				printf("same!\n");
-				//means min was never updated, therefore there was nothing in the unsorted section of the doubly linked list smaller then it, 
-				//meaning no need to swap.
-				i = i->next;
-				continue;
+			else if (j->next == i) {
+				i->prev = j->prev;
+				j->next = i->next;
+				i->next = j;
+				j->prev = i;
 			}
-
 			else {
-				printf("not same!\n");
-				//now I need to make sure iteratorI stays consistent, so I guess set it tooooooo uh I? i think
-				i = i;
-				j = min;
-				// swap nodes i and j
-				if (i->prev != NULL)
-					i->prev->next = j;
-				else
-					head = j;
-
-				if (j->prev != NULL)
-					j->prev->next = i;
-				else
-					head = i;
-
-				if (i->next != NULL)
-					i->next->prev = j;
-
-				if (j->next != NULL)
-					j->next->prev = i;
-
-				tempN = i->next;
-				tempP = i->prev;
+				temp_i_next = i->next;
+				temp_i_prev = i->prev;
 
 				i->next = j->next;
 				i->prev = j->prev;
 
-				j->next = tempN;
-				j->prev = tempP;
-
-				i = j->next;
+				j->next = temp_i_next;
+				j->prev = temp_i_prev;
 			}
+
+			i = min->next; 
 		}
 		system("pause");
-		return head;
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	case 4:
-		break;
-	default:
-		printf("choose a number (1-4)...\n");
 	}
-	system("pause");
-
+	return head;
 }
 

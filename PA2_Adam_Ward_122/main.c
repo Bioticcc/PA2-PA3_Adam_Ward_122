@@ -6,8 +6,10 @@ int main(void) {
 	Node* head = NULL;
 	FILE* input = NULL;
 	FILE* output = NULL;
-	while (1) {
+	while (1) {	
 		system("cls");
+		printf("head: %s\n", head);
+
 		int c = menu();
 		switch (c) {
 		case 1:
@@ -22,6 +24,7 @@ int main(void) {
 			system("cls");
 			output = openFW("musicPlaylist.csv");
 			store(output, head);
+
 			system("pause");
 			break;
 		case 3:

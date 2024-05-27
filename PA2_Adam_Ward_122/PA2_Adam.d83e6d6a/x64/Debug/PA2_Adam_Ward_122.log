@@ -11,14 +11,11 @@ C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(147,1
 C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(221,6): warning C4101: 'clear': unreferenced local variable
 C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(612,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
 C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(661,4): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(712,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'Node *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(712,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'Node *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(758,3): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(791,3): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(793,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(568,1): warning C4716: 'play': must return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(719,11): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'Node *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(781,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
 C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(545,1): warning C4716: 'rate': must return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(568,1): warning C4716: 'play': must return a value
 C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(666,1): warning C4715: 'delete': not all control paths return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(679,1): warning C4715: 'compare': not all control paths return a value
 C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(505,1): warning C4716: 'edit': must return a value
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(771,1): warning C4715: 'sort': not all control paths return a value
   PA2_Adam_Ward_122.vcxproj -> C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\x64\Debug\PA2_Adam_Ward_122.exe
