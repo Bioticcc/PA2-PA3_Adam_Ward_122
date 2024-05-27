@@ -665,6 +665,19 @@ char* delete(Node* head) {
 	}
 }
 
+char* compare(Node* cmp1, Node* cmp2, int cmp) {
+	switch (cmp) {
+	case 1:
+		return strcmp(cmp1->data.artist, cmp2->data.artist);
+	case 2:
+		return strcmp(cmp1->data.albumTitle, cmp2->data.albumTitle);
+	case 3:
+		return (cmp1->data.rating - cmp2->data.rating);
+	case 4:
+		return (cmp1->data.numPlayed - cmp2->data.numPlayed);
+	}
+}
+
 char* sort(Node* head) {
 	printf("|--Sorting Playlist-->\n");
 	printf("|(1)Sort by ARTIST (A-Z)\n");
@@ -676,112 +689,85 @@ char* sort(Node* head) {
 	scanf("%d", &a);
 	
 
-	Node* iteratorI = head;
-	Node* iteratorJ;
-	Node* I;
-	Node* J;
+	
+	Node* i = head;
+	Node* j;
 	Node* tempP;
 	Node* tempN;
-	Node* tempPN;
-	Node* tempNP;
 	Node* min;
+
 	switch(a){
 
 	case 1:
-		while (iteratorI != NULL) {
-			printf("\ntest\n");
-			iteratorJ = iteratorI;
-			min = iteratorI;
-			//determining if we need to swap.
-			while (iteratorJ != NULL) {
-				//means the current J value is LESS then the current I value
-				if (strcmp(iteratorI->data.artist, iteratorJ->data.artist) < 0) {
-					min = iteratorJ;
-				}
-				iteratorJ = iteratorJ->next;
+		while (i != NULL) {
+			system("cls");
+
+			Node* printing = head;
+			printf("sorted list:\n\n");
+			while (printing != NULL) {
+				printf("Artist: %s\n", printing->data.artist);
+				printing = printing->next;
 			}
-			if (strcmp(min, iteratorI) == 0) {
+
+			//printf("\ntest\n");
+			j = i;
+			min = i;
+			//determining if we need to swap.
+			while (j != NULL) {
+				//means the current J value is LESS then the current I value
+				if (strcmp(j->data.artist, min->data.artist) < 0) {
+					//printf("testMIN\n");
+					min = j;
+				}
+				j = j->next;
+			}
+
+			printf("\nmin: %s, swap: %s\n", min, i);
+			system("pause");
+
+			if (strcmp(min->data.artist, i->data.artist) == 0) {
+				printf("same!\n");
 				//means min was never updated, therefore there was nothing in the unsorted section of the doubly linked list smaller then it, 
 				//meaning no need to swap.
+				i = i->next;
 				continue;
 			}
 
 			else {
+				printf("not same!\n");
 				//now I need to make sure iteratorI stays consistent, so I guess set it tooooooo uh I? i think
-				iteratorI = iteratorI->next;
-				I = iteratorI;
-				J = min;
-				//means we DO need to swap! yahooie! (i want to cry TEARS, TEARS i tell you ;-;)
-				//alrighty so heres the game plan, i gotta swap NINE fucking pointers for each one apparantly soooooo
-				//min = J, swap this with I, (I = iteratorI) name change for implicities sake!)
+				i = i;
+				j = min;
+				// swap nodes i and j
+				if (i->prev != NULL)
+					i->prev->next = j;
+				else
+					head = j;
 
-				//swapping when swap/iteratorI is the FIRST item in the list, means i need to update head value as well.
-				if (I->prev == NULL) {
-					//swapping!
-					//so sinnce I->prev is NULL, that means i dont need to do the wacky shit? hopefully??
-					//nope gotta do the wacky shit, heres the horrible pointers
-					tempNP = I->next->prev;
-					I->next->prev = J->next->prev;
-					J->next->prev = tempNP;
-					//thats the NPs, now PN
-					I->prev->next = J->prev->next;
-					J->next->prev = NULL;
+				if (j->prev != NULL)
+					j->prev->next = i;
+				else
+					head = i;
 
-					//now the usual ones?
-					tempN = I->next;
-					I->next = J->next;
-					I->prev = J->prev;
-					J->next = tempN;
-					J->prev = NULL;
+				if (i->next != NULL)
+					i->next->prev = j;
 
-					//since its swapping the head pointer, head needs to be updated and returned AFTER my while loop (i think???)
-					head = J;
+				if (j->next != NULL)
+					j->next->prev = i;
 
-				}
-				else if (J->next = NULL) {
-					//swapping!
-					tempPN = I->prev->next;
-					I->prev->next = J->prev->next;
-					J->prev->next = tempPN;
-					//now the NPs
-					J->next->prev = I->next->prev;
-					I->next->prev = NULL;
+				tempN = i->next;
+				tempP = i->prev;
 
-					//the usuals! :D (im reaching the end of my rope)
-					tempP = I->prev;
-					I->prev = J->prev;
-					J->prev = tempP;
-					J->next = I->next;
-					I->next = NULL;
-				}
-				else if (I->prev == NULL && J->next == NULL) {
-					//swapping tail and head at the same time (.____.)
+				i->next = j->next;
+				i->prev = j->prev;
 
+				j->next = tempN;
+				j->prev = tempP;
 
-
-				}
-
-				else {
-					//swapping!
-					tempPN = I->prev->next;
-					tempNP = I->next->prev;
-					I->prev->next = J->prev->next;
-					I->next->prev = J->next->prev;
-					J->prev->next = tempPN;
-					J->next->prev = tempNP;
-
-					//THE USUALS! one last time!
-					tempP = I->prev;
-					tempN = I->next;
-					I->prev = J->prev;
-					I->next = J->next;
-					J->prev = tempP;
-					J->next = tempN;
-				}
-				printf("\nSWAPPED!\n");
+				i = j->next;
 			}
-			
 		}
+		system("pause");
 		return head;
 		break;
 	case 2:
@@ -796,3 +782,4 @@ char* sort(Node* head) {
 	system("pause");
 
 }
+
