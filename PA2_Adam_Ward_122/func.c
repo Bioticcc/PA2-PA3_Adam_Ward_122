@@ -50,6 +50,7 @@ int menu() {
 	printf("|\t\t        (9) PLAY\t\t\t|\n");
 	printf("|\t\t      (10) SHUFFLE\t\t\t|\n");
 	printf("|\t\t       (11) EXIT\t\t\t|\n");
+	printf("|\t\t       (12) RUN TESTS\t\t\t|\n");
 	printf("|-------------------------------------------------------|\n");
 	printf("|---Now then, where to? (#)--->: ");
 	//printf("%d",_getch());
@@ -642,16 +643,35 @@ char* delete(Node* head) {
 	
 	printf("|--Deleting Song-->\n");
 	printf("|Currently loaded songs:\n");
-	
+	int checka = 0;
 	Node* curr = head;
 	while (curr != NULL) {
 		printf("|%s\n", curr->data.songTitle);
+		checka++;
 		curr = curr->next;
 	}
 
 	printf("|Song Name: ");
 	getStr(song, 100);
 	printf("Chosen Song: %s\n", song);
+
+	if (checka == 1) {
+		int z = 0;
+		//only one song in list, so deletes list as a whole? i guess?
+		printf("\nWARNING: There is only ONE song in your playlist. Deleting will delete entire playlist.\n");
+		printf("(1) continue\n(0) go back! save yourself!\nDecision: ");
+		scanf("%d", &z);
+		if (z) {
+			//deleting entire list. que?? what do?? dunno... tis weird D:
+			//set head pointer to NULL? i guess? what about the memory though.... tragedy strikes once more
+			//i guess just free(curr)??? IM CONFUSEDDDD (the dramatic music in my ears makes this 10x more tragic and disasterous)
+			head->prev = NULL;
+			head->next = NULL;
+			head = NULL;
+			free(head);
+			return head;
+		}
+	}
 
 	curr = head;
 	while (curr != NULL) {

@@ -8,7 +8,7 @@ int main(void) {
 	Node* head = NULL;
 	FILE* input = NULL;
 	FILE* output = NULL;
-	while (1) {	
+	while (1) {
 		system("cls");
 		//printf("head: %s\n", head);
 
@@ -70,11 +70,7 @@ int main(void) {
 			shuffle(head);
 			break;
 		case 11:
-			//run tests (PLEASE ONLY DO THIS AFTER USING OPTIONS 1 AND 2 PLEASE THEY ARE REQUIRED.
-			insertTest();
-
-		case 12:
-			if (input!=NULL && output != NULL) {
+			if (input != NULL && output != NULL) {
 				fclose(input);
 				fclose(output);
 				exit(1);
@@ -87,8 +83,13 @@ int main(void) {
 		default:
 			ErrorPanic;
 			break;
+
+		case 12:
+			//run tests (PLEASE ONLY DO THIS AFTER USING OPTIONS 1 AND 2 PLEASE THEY ARE REQUIRED.) 
+			//run tests (NEVERMIND I WAS MISREADING THE ASSIGNMENT LMAO YOU CAN DO THIS SEPERATELY)
+			insertTest();
+			break;
 		}
+
 	}
-	
-	
 }
