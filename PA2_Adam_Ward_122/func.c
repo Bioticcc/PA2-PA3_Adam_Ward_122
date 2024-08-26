@@ -3,13 +3,15 @@
 
 
 int ErrorPanic(){
-	for (int i = 0; i < 1000; i++) {
+	system("cls");
+	for (int i = 0; i < 250; i++) {
+		
 		printf("<[ERROR]>");
-		Sleep(200);
+		Sleep(1);
 	}
-	return 1;
 	printf("\n\nJUST KIDDING! :D\n\n");
 	system("pause");
+	//clear();
 }
 
 FILE* openFR(char* fileName) {
@@ -55,11 +57,12 @@ int menu() {
 	printf("|---Now then, where to? (#)--->: ");
 	//printf("%d",_getch());
 	scanf("%d", &choice);
-	/*
-	while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6 && choice != 7 && choice != 8 && choice != 9 && choice != 10 && choice != 11) {
+
+	while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6 && choice != 7 && choice != 8 && choice != 9 && choice != 10 && choice != 11 && choice != 12) {
 		printf("|---Choose a menu option, please! (#)--->: ");
+		scanf("%*s"); //should clear buffer
 		scanf("%d", &choice);
-	}*/
+	}
 	return choice;
 }
 
@@ -585,7 +588,7 @@ int play(Node* head) {
 
 		printf("\\(*O*)/\n\n");
 
-		Sleep(3000);
+		Sleep(1000);
 		curr = curr->next;
 	}
 

@@ -19,7 +19,6 @@ Description: PA2, a music thing.
 #include<math.h>
 #include<conio.h>
 #include<windows.h>
-#endif
 
 typedef struct duration {
 	int minutes;
@@ -108,3 +107,4 @@ void insertShuff(NodeShuff** list_ptr, Shuff* data);
 
 int shuffle(Node* head);
 
+#endif

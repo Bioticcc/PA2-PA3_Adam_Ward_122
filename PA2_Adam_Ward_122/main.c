@@ -79,17 +79,17 @@ int main(void) {
 				exit(0);
 			}
 			break;
-
-		default:
-			ErrorPanic;
-			break;
-
 		case 12:
-			//run tests (PLEASE ONLY DO THIS AFTER USING OPTIONS 1 AND 2 PLEASE THEY ARE REQUIRED.) 
+			//run tests (PLEASE ONLY DO THIS AFTER USING OPTIONS 1 AND 2 THEY ARE REQUIRED.) 
 			//run tests (NEVERMIND I WAS MISREADING THE ASSIGNMENT LMAO YOU CAN DO THIS SEPERATELY)
 			insertTest();
 			break;
+	
+		default:
+			ErrorPanic();
+			//clear();
 		}
+
 
 	}
 }

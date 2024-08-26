@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\func.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|solutionrelative:func.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|solutionrelative:Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\tests.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\tests.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|solutionrelative:tests.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\func.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|solutionrelative:func.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|solutionrelative:Header.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D83E6D6A-AC24-4488-9594-2AA8C00AE212}|PA2_Adam_Ward_122.vcxproj|C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\musicPlayListCOPY.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -38,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\main.c",
               "RelativeDocumentMoniker": "main.c",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\main.c",
               "RelativeToolTip": "main.c",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAAcAAAATAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAFYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-05-13T22:51:09.756Z",
               "IsPinned": true,
@@ -56,13 +56,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "func.c",
               "DocumentMoniker": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\func.c",
               "RelativeDocumentMoniker": "func.c",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\func.c",
               "RelativeToolTip": "func.c",
-              "ViewState": "AQIAAEQDAAAAAAAAAAAAAFMDAAABAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAAD4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-05-15T22:50:20.324Z",
               "IsPinned": true,
@@ -70,13 +70,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Header.h",
               "DocumentMoniker": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\Header.h",
               "RelativeDocumentMoniker": "Header.h",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\Header.h",
               "RelativeToolTip": "Header.h",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAFQAAAAAAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAAG4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-13T22:51:16.436Z",
               "IsPinned": true,
@@ -84,13 +84,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "tests.c",
               "DocumentMoniker": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\tests.c",
               "RelativeDocumentMoniker": "tests.c",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\tests.c",
               "RelativeToolTip": "tests.c",
-              "ViewState": "AQIAAAoBAAAAAAAAAAAAACIBAACOAAAA",
+              "ViewState": "AQIAAAwBAAAAAAAAAADwvyIBAACOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-05-27T08:53:36.744Z",
               "IsPinned": true,
@@ -98,13 +98,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "tests.h",
               "DocumentMoniker": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\tests.h",
               "RelativeDocumentMoniker": "tests.h",
               "ToolTip": "C:\\Users\\jeezu\\Documents\\GitHub\\PA2_Adam_Ward_122\\PA2_Adam_Ward_122\\tests.h",
               "RelativeToolTip": "tests.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-27T08:51:05.831Z",
               "EditorCaption": ""
@@ -119,8 +119,7 @@
               "RelativeToolTip": "musicPlayList.csv",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-13T22:53:06.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T22:53:06.44Z"
             },
             {
               "$type": "Document",
@@ -132,8 +131,7 @@
               "RelativeToolTip": "musicPlayListCOPY.csv",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-05-15T22:38:51.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T22:38:51.088Z"
             }
           ]
         }

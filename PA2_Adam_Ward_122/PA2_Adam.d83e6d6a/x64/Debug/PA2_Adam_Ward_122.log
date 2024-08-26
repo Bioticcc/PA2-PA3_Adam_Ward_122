@@ -1,17 +1,29 @@
-﻿  tests.c
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(56,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(9,7): warning C4101: 'songLenSec': unreferenced local variable
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(8,7): warning C4101: 'songLenMin': unreferenced local variable
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(11,7): warning C4101: 'numPlayed': unreferenced local variable
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(5,6): warning C4101: 'clear': unreferenced local variable
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(10,7): warning C4101: 'rating': unreferenced local variable
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(118,4): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(157,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(218,13): warning C4133: '=': incompatible types - from 'node *' to 'NodeShuff *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(238,13): warning C4133: '=': incompatible types - from 'node *' to 'NodeShuff *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(271,8): warning C4133: '=': incompatible types - from 'char *' to 'Node *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(280,8): warning C4133: '=': incompatible types - from 'char *' to 'Node *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(286,8): warning C4133: '=': incompatible types - from 'char *' to 'Node *'
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(121,1): warning C4715: 'deleteT': not all control paths return a value
-C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\tests.c(241,1): warning C4716: 'shuffleT': must return a value
+﻿  func.c
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(21,3): warning C4047: 'return': 'FILE *' differs in levels of indirection from 'int'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(33,3): warning C4047: 'return': 'FILE *' differs in levels of indirection from 'int'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(114,17): warning C4133: '=': incompatible types - from 'NodeShuff *' to 'node *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(115,21): warning C4133: '=': incompatible types - from 'NodeShuff *' to 'node *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(125,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(122,6): warning C4101: 'clear': unreferenced local variable
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(156,15): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[100]'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(156,15): warning C4024: 'fgets': different types for formal and actual parameter 1
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(220,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(161,14): warning C4047: 'initializing': 'char *' differs in levels of indirection from 'char **'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(174,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(248,6): warning C4101: 'clear': unreferenced local variable
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(639,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(675,4): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(707,4): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(786,2): warning C4133: 'return': incompatible types - from 'Node *' to 'char *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(804,8): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(816,9): warning C4133: '=': incompatible types - from 'node *' to 'NodeShuff *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(831,13): warning C4133: '=': incompatible types - from 'node *' to 'NodeShuff *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(852,13): warning C4133: '=': incompatible types - from 'node *' to 'NodeShuff *'
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(15,1): warning C4716: 'ErrorPanic': must return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(572,1): warning C4716: 'rate': must return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(595,1): warning C4716: 'play': must return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(532,1): warning C4716: 'edit': must return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(712,1): warning C4715: 'delete': not all control paths return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(725,1): warning C4715: 'compare': not all control paths return a value
+C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\func.c(855,1): warning C4716: 'shuffle': must return a value
   PA2_Adam_Ward_122.vcxproj -> C:\Users\jeezu\Documents\GitHub\PA2_Adam_Ward_122\PA2_Adam_Ward_122\x64\Debug\PA2_Adam_Ward_122.exe
