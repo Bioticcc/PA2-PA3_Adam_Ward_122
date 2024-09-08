@@ -107,4 +107,5 @@ void insertShuff(NodeShuff** list_ptr, Shuff* data);
 
 int shuffle(Node* head);
 
+void pa3Warning();
 #endif

@@ -1,6 +1,11 @@
 #include "Header.h"
 //opening file
 
+void pa3Warning() {
+	system("cls");
+	printf("\n[AREA OFF LIMITS] - Come back when PA3 is due ;3\n");
+	system("pause");
+}
 
 int ErrorPanic(){
 	system("cls");
@@ -228,7 +233,15 @@ int store(FILE* output, Node* head) {
 	}
 	Node* curr = head;
 	while (curr != NULL) {
-		fprintf(output, "%s,", curr->data.artist);
+
+		if (strlen(curr->data.artist) >= 10) {
+			fprintf(output, "\"%s\",", curr->data.artist);
+		}
+		else {
+			fprintf(output, "%s,", curr->data.artist);
+		}
+
+
 		fprintf(output, "%s,", curr->data.albumTitle);
 		fprintf(output, "%s,", curr->data.songTitle);
 		fprintf(output, "%s,", curr->data.genre);
