@@ -40,18 +40,16 @@ int main(void) {
 			display(head);
 			break;
 		case 4:
-			pa3Warning();
-			/*insert
+			//pa3Warning();
+			//insert
 			system("cls");
 			head = add(head);
-			*/
 			break;
 		case 5:
-			pa3Warning();
-			/*delete
+			//pa3Warning();
+			//delete
 			system("cls");
 			head = delete(head);
-			*/
 			break;
 		case 6:
 			//edit
@@ -59,11 +57,11 @@ int main(void) {
 			edit(head);
 			break;
 		case 7:
-			pa3Warning();
-			/*sort
+			//pa3Warning();
+			//sort
 			system("cls");
 			head = sort(head);
-			*/
+			
 			break;
 		case 8:
 			//rate
@@ -76,11 +74,10 @@ int main(void) {
 			play(head);
 			break;
 		case 10:
-			pa3Warning();
-			/*shuffle
+			//pa3Warning();
+			//shuffle
 			system("cls");
 			shuffle(head);
-			*/
 			break;
 		case 11:
 			output = openFW("musicPlaylist.csv");
@@ -95,10 +92,10 @@ int main(void) {
 			}
 			break;
 		case 12:
-			pa3Warning();
+			//pa3Warning();
 			//run tests (PLEASE ONLY DO THIS AFTER USING OPTIONS 1 AND 2 THEY ARE REQUIRED.) 
 			//run tests (NEVERMIND I WAS MISREADING THE ASSIGNMENT LMAO YOU CAN DO THIS SEPERATELY)
-			//insertTest();
+			insertTest();
 			break;
 	
 		default:

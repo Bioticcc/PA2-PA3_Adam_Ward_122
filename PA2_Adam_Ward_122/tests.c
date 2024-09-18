@@ -284,7 +284,8 @@ void insertTest() {
 	//shuffle test
 	//gotta add like 3 songs with this weird method i HATE testcases like this so much >.> if only it could accept arguments my life would be glorious
 	headT = addT3(headT);
-	printf("TESTING SHUFFLE FUNCTION:\n");
+	system("cls");
+	printf("\nTESTING SHUFFLE FUNCTION:\n");
 	printf("PRESHUFFLED PLAYLIST:\n");
 	displayT(headT);
 	//now then, the shuffler:
